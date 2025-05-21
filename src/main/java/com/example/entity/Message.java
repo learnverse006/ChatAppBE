@@ -29,15 +29,15 @@ public class Message {
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
-    @Lob
+//    @Lob
     @Column(nullable = false)
     private String content;
 
     @Column(nullable = false, updatable = false)
-    private Timestamp sentAt;
+    private Timestamp createdAt;
 
     @PrePersist
-    protected void onSend() {
-        this.sentAt = new Timestamp(System.currentTimeMillis());
+    protected void prePersist() {
+        this.createdAt = new Timestamp(System.currentTimeMillis());
     }
 }

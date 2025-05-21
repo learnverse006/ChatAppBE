@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 public class DataSeeder {
 
     @Bean
-    public CommandLineRunner seedData(
+    public CommandLineRunner    seedData(
             UserRepository userRepo,
             ConversationRepository convoRepo,
             ConversationMemberRepository memberRepo,

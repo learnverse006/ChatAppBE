@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+
 public class MessageService{
 
     private final MessageRepository messageRepository;
@@ -34,6 +35,6 @@ public class MessageService{
 
         Message saved = messageRepository.save(message);
 
-        return new MessageResponse(saved.getId(), sender.getFullName(), saved.getContent(), saved.getSentAt());
+        return new MessageResponse(saved.getId(), sender.getFullName(), saved.getContent(), saved.getCreatedAt());
     }
 }
